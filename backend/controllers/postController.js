@@ -18,6 +18,14 @@ const getUserPosts = async (req, res) => {
     res.status(200).json(posts);
 }
 
+// get n most liked posts
+const getMostLikedPosts = async (req, res) => {
+    const { n } = req.params;
+
+    const posts = await Post.find().sort({likes: -1}).limit(n);
+
+    res.status(200).json(posts);
+}
 
 // get a single post
 const getOnePost = async (req, res) => {
@@ -35,6 +43,16 @@ const getOnePost = async (req, res) => {
     }
     
     res.status(200).json(post);
+}
+
+// get the latest post
+const getLatestPost = async (req, res) => {
+    try {
+        const post = await Post.find().sort({_id: -1}).limit(1);
+        return res.status(200).json(post);
+    } catch (error) {
+        return res.status(400).json({error: error.message});
+    }
 }
 
 // create a new post
@@ -113,7 +131,9 @@ module.exports = {
     createPost,
     getAllPosts,
     getUserPosts,
+    getMostLikedPosts,
     getOnePost,
+    getLatestPost,
     deletePost,
     updatePost
 }
