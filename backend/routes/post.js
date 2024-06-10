@@ -12,7 +12,7 @@ const requireAuth = require('../middlewares/requireAuth')
 const router = express.Router();
 
 // define to use middlewares
-router.use(requireAuth)
+// router.use(requireAuth)
 
 
 
@@ -20,7 +20,7 @@ router.use(requireAuth)
 router.get('/', getAllPosts);
 
 // GET all posts from the loggedin user
-router.get('/loggedin', getUserPosts);
+router.get('/loggedin', requireAuth, getUserPosts);
 
 // GET the latest post
 router.get('/latest', getLatestPost);
@@ -33,19 +33,19 @@ router.get('/mostliked/:n', getMostLikedPosts);
 
 
 // POST a new post
-router.post('/', createPost);
+router.post('/', requireAuth, createPost);
 // when a post request comes in, 
 // it will find the createPost function which is exported from the Controller!!!
 
 
 
 // DELETE a post
-router.delete('/:id', deletePost);
+router.delete('/:id', requireAuth, deletePost);
 
 
 
 // UPDATE a new post
-router.patch('/:id', updatePost);
+router.patch('/:id', requireAuth, updatePost);
 
 
 
