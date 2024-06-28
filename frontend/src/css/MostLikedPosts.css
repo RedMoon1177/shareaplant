@@ -1,0 +1,8 @@
+@media (max-width: 768px) { /* Adjust max-width as needed */
+    .row-cols-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
