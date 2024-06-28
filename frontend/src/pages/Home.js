@@ -1,5 +1,8 @@
 
 import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 
 const Home = () => {
     const [latestPost, setLatestPost] = useState([]);
@@ -40,7 +43,9 @@ const Home = () => {
     }, []);
     return (
         <div>
-          <h1>Lastest post:</h1>
+          <Navbar />
+          <Banner />
+          {/* <h1>Lastest post:</h1>
           <ul>
             {latestPost.map(item => (
               <li key={item.id}>{item.title}</li>
@@ -51,7 +56,9 @@ const Home = () => {
             {mostLikedPosts.map(item => (
               <li key={item.id}>{item.title}</li>
             ))}
-          </ul>
+          </ul> */}
+
+          <Footer />
         </div>
       );
     };

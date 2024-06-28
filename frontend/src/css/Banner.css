@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Snell Roundhand';
+    src: url('../../public/fonts/Snell\ Roundhand\ Regular.ttf') format('truetype');
+  }
+
+.banner{
+    color: #FFFFFF;
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)),
+    url("https://images.unsplash.com/photo-1719560904425-fa3e805b4a58?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    height: 45vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+}
+
+.banner h1 {
+    font-family: "Kufam", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #FFFBEB;
+    margin: 0;
+}
+
+.banner h2 {
+    font-family: "Snell Roundhand", sans-serif;
+    font-size: 4rem;
+    color: #FFFBEB;
+}
